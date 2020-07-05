@@ -1,0 +1,97 @@
+﻿@page "/"
+
+@inherits TabletBase
+
+<head>
+    <link rel="stylesheet" href="../css/tablet_style.css" />
+</head>
+
+<div class="page_container">
+
+    <section class="tablet">
+        <div class="tablet_container">
+
+            @if (show_main_screen == true)
+            {
+                <div class="screen">
+                    <div class="screen_container">
+
+                        <div class="apps">
+                            <div class="apps_container">
+
+                                <div @onclick="OpenChatApp" class="app">
+                                    <img src="../images/messenger.png" alt="messenger" />
+                                </div>
+
+                                <div class="app">
+                                    <img src="../images/gallery.png" alt="gallery" />
+                                </div>
+
+                                <div class="app">
+                                    <img src="../images/options.png" alt="options" />
+                                </div>
+
+                                <div class="app">
+                                    <img src="../images/internet.png" alt="internet" />
+                                </div>
+
+                                <div class="app">
+                                    <img src="../images/live.png" alt="internet" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="chat_app">
+                    <div class="chat_app_container">
+
+                        <div class="chat_logs">
+                            <div class="chat_logs_container">
+                                @foreach (var o in asked_questions)
+                                {
+                                    <div class="out_txt">
+                                        <p>@o.Question </p>
+                                    </div>
+
+
+                                    <div class="out_txt">
+                                        <p>@o.Answer </p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="questions">
+                            <div class="questions_container">
+                                @foreach (var o in new_questions)
+                                {
+                                    <p @onclick="@(e => AskQuestion(o.Id))">@o.Question</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+
+
+
+            <div class="tablet_bottom">
+
+                <div @onclick="OpenMainScreen" class="tablet_bottom_button">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</div>
+

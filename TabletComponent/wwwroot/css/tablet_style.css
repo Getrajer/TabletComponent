@@ -1,0 +1,187 @@
+﻿*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+p{
+    padding:0;
+    margin:0;
+}
+
+.tablet {
+    width:100%;
+    max-width: 1000px;
+    height: 500px;
+    border-radius: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+.tablet .tablet_container{
+    width:100%;
+    max-width:990px;
+    height: 490px;
+
+    display:grid;
+    grid-template-columns: 960px 30px;
+
+    background-color:white;
+    background-image: url(../images/wallpaper1.jpg);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.tablet .tablet_bottom{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    background-color:black;
+}
+
+.tablet .tablet_bottom .tablet_bottom_button{
+    background-color:white;
+    border-radius:50%;
+    width:100%;
+    max-width:15px;
+    height:15px;
+    cursor:pointer;
+}
+
+.tablet .apps{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    align-items: center;
+}
+
+.tablet .apps_container{
+    width:100%;
+    max-width:900px;
+    padding-top:20px;
+    display:grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 50px;
+}
+
+.tablet .app{
+    cursor:pointer;
+    height: 100px;
+    width:100px;
+    transition: 0.5s;
+}
+
+.tablet .app:hover{
+    transform: translateY(-3px);
+    background-color:rgba(255, 255, 255, 0.20);
+}
+
+/*Chat App Style*/
+.tablet .chat_app{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.60);
+    color:white;
+}
+
+.tablet .chat_app_container{
+    display:grid;
+    width:100%;
+    grid-template-columns: 700px 270px;
+}
+
+.tablet .chat_logs{
+    display:flex;
+    justify-content:center;
+}
+
+.tablet .chat_logs_container{
+    width:100%;
+    overflow-y:scroll;
+    height:490px;
+    width:600px;
+}
+
+.tablet .out_txt{
+    width:100%;
+    display:flex;
+    margin: 1.5em 0;
+}
+
+.tablet .out_txt p {
+    margin:0;
+    font-size:1.2rem;
+    width:250px;
+}
+
+.tablet .out_txt:nth-child(even){
+    justify-content:flex-start;
+}
+
+.tablet .out_txt:nth-child(even) p{
+   text-align:center;
+   padding:0.8em 0.4em;
+   background-color:rgba(56, 71, 143, 0.60);
+   color:#f6f9fc;
+   border-radius: 0.5em;
+   margin-left: 0.3em;
+}
+
+.tablet .out_txt:nth-child(odd){
+    justify-content:flex-end;
+}
+
+.tablet .out_txt:nth-child(odd) p{
+   text-align:center;
+   padding:0.8em 0.4em;
+   background-color:rgba(97, 56, 120, 0.60);
+   color:#f6f9fc;
+   border-radius: 0.5em;
+   margin-right: 0.3em;
+}
+
+.tablet .chat_logs_container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.tablet .chat_logs_container::-webkit-scrollbar-thumb {
+  background-color: #141414;
+}
+
+.tablet .questions{
+    background-color:rgba(0, 0, 0, 0.60);
+    width:100%;
+    height:100%;
+}
+
+.tablet .questions p{
+    font-size:1.2rem;
+    border-bottom: 1px solid rgba(109, 24, 122, 0.4);
+    cursor:pointer;
+    padding:0.6em 0;
+    background-color:rgba(97, 56, 120, 0.20);
+    text-align:center;
+}
+
+.tablet .questions_container{
+    overflow-y:scroll;
+}
+
+.tablet .questions_container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.tablet .questions_container::-webkit-scrollbar-thumb {
+  background-color: #141414;
+}
+
+/*End of chat app style*/
