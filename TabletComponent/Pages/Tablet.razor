@@ -6,37 +6,47 @@
     <link rel="stylesheet" href="../css/tablet_style.css" />
 </head>
 
-<div class="page_container">
+<div id="@ActualScheme" class="page_container">
 
     <section class="tablet">
-        <div class="tablet_container">
+        <div class="tablet_container @current_wallpeper.Style">
 
             @if (show_main_screen == true)
             {
                 <div class="screen">
                     <div class="screen_container">
-
                         <div class="apps">
                             <div class="apps_container">
 
                                 <div @onclick="OpenChatApp" class="app">
                                     <img src="../images/messenger.png" alt="messenger" />
+                                    <p>Chat with me</p>
                                 </div>
 
-                                <div class="app">
+                                <div @onclick="OpenGalleryApp" class="app">
                                     <img src="../images/gallery.png" alt="gallery" />
+                                    <p>Projects gallery</p>
                                 </div>
 
-                                <div class="app">
+                                <div @onclick="OpenOptions" class="app">
                                     <img src="../images/options.png" alt="options" />
+                                    <p>Options</p>
                                 </div>
 
-                                <div class="app">
+                                <div @onclick="OpenInternetApp" class="app">
                                     <img src="../images/internet.png" alt="internet" />
+                                    <p>Internet</p>
                                 </div>
 
                                 <div @onclick="OpenLiveApp" class="app">
                                     <img src="../images/live.png" alt="internet" />
+                                    <p>See me live</p>
+                                </div>
+
+
+                                <div @onclick="OpenSkillsApp" class="app">
+                                    <img src="../images/skills.png" alt="skills" />
+                                    <p>Skills</p>
                                 </div>
 
                             </div>
@@ -45,8 +55,8 @@
                     </div>
                 </div>
             }
-            
-            @if(show_chat_app == true)
+
+            @if (show_chat_app == true)
             {
                 <div class="chat_app">
                     <div class="chat_app_container">
@@ -79,9 +89,9 @@
                 </div>
             }
 
-            @if(show_live_app == true)
+            @if (show_live_app == true)
             {
-                    
+
                 <div class="live_app">
                     <div class="svg_container">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 637 446">
@@ -289,14 +299,251 @@
 
             }
 
+            @if (show_options_screen == true)
+            {
+                <div class="options">
+                    <div class="options_container">
+
+                        <div class="wallpaper">
+                            <div class="wallpaper_container">
+
+                                <div class="option_title">
+                                    <h2>Choose wallpaper</h2>
+                                </div>
+
+                                <div class="wallpaper_choices">
+                                    @foreach (var w in wallpapers)
+                                    {
+                                        <div class="wallpaper_choice">
+                                            <div @onclick="@(e => ChangeCurrentWallpaper(w.Id))" class="img_overlay"></div>
+                                            <img src="@w.Path" alt="@w.Style" />
+                                        </div>
+                                    }
+                                </div>
 
 
+                            </div>
+                        </div>
+
+                        <div class="color_scheme">
+                            <div class="color_scheme_container">
+                                <div class="option_title">
+                                    <h2>Choose color scheme</h2>
+                                </div>
+
+                                <div class="color_scheme_choices">
+                                    <div @onclick="@(e => ChangeColorScheme(1))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70.87 70.87">
+                                            <title>Color_sheme1</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #27437b;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="39.34" y="15.83" width="20.83" height="20.83" style="fill: #6182c1;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="40.35" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(2))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_2</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #8a2d91;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #a43a95;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(3))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_3</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #454952;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #868d9d;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(4))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_4</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ebebeb;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #1a1a1a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(5))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_5</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #73bf44;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #0c8441;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(6))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_6</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ed184a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #af1f23;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(7))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_7</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #f8ec24;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #cab72e;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+            @if (show_gallery_app == true)
+            {
+                <div class="gallery_app">
+                    <div class="gallery_app_container">
+                        <div class="images_scroll">
+                            @if (display_img == false)
+                            {
+                                <div class="gallery">
+                                    <div class="gallery_container">
+
+                                        @foreach (var i in images)
+                                        {
+                                            <div class="img_box">
+                                                <div @onclick="@(e => OpenImage(i.Id))" class="cover_img">
+                                                    <p>@i.Title</p>
+                                                </div>
+                                                <div class="img_box_container">
+                                                    <img src="@i.Path" alt="@i.Alt" />
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="focused_gallery">
+                                    <div class="focused_gallery_container">
+
+                                        <div class="center_img">
+                                            <div @onclick="PreviousImage" class="button_left">
+                                                <button>&lt;</button>
+                                            </div>
+
+                                            <div @onclick="NextImage" class="button_right">
+                                                <button>&gt;</button>
+                                            </div>
+
+                                            <div class="img_box">
+                                                <img src="@current_img.Path" alt="@current_img.Alt" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            @if(show_internet_app == true)
+            {
+                <div class="internet">
+                    <div class="internet_container">
+                        
+
+                    </div>
+                </div>
+            }
+
+
+            @if(show_skills_app == true)
+            {
+                <div class="skills">
+                    <div class="skills_container">
+                        <div class="title">
+                            <h2>Skills</h2>
+                        </div>
+
+                        <div class="all_skills">
+                            <div class="front_end">
+
+                            </div>
+
+                            <div class="back_end">
+
+                            </div>
+
+                            <div class="other">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
 
             <div class="tablet_bottom">
-
                 <div @onclick="OpenMainScreen" class="tablet_bottom_button">
                 </div>
-
             </div>
 
         </div>
