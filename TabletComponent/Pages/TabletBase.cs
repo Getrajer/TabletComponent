@@ -11,13 +11,15 @@ namespace TabletComponent.Pages
 
         #region Variables and functions for toggleing apps within tablet
         protected bool show_main_screen = false;
-        protected bool show_chat_app = true;
+        protected bool show_chat_app = false;
+        protected bool show_live_app = true;
 
 
         public void CloseAllApps()
         {
             show_chat_app = false;
             show_main_screen = false;
+            show_live_app = false;
         }
 
         /// <summary>
@@ -51,6 +53,23 @@ namespace TabletComponent.Pages
             {
                 CloseAllApps();
                 show_main_screen = true;
+            }
+        }
+
+        /// <summary>
+        /// Will open live app screen
+        /// </summary>
+        public void OpenLiveApp()
+        {
+            if (show_live_app == false)
+            {
+                CloseAllApps();
+                show_live_app = true;
+            }
+            else
+            {
+                CloseAllApps();
+                show_live_app = true;
             }
         }
         #endregion
