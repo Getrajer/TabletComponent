@@ -597,6 +597,14 @@ p{
     height:480px;
 }
 
+.tablet .gallery_app_container::-webkit-scrollbar {
+    width: 0px;
+}
+
+.tablet .gallery_app_container::-webkit-scrollbar-thumb {
+    background-color: #141414;
+}
+
 .tablet .gallery_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -758,6 +766,35 @@ p{
 .focused_gallery .close_button button:hover{
     color:#2c4d8f;
 }
-
-
 /*End of gallery style*/
+
+/*Skills*/
+.tablet .skills{
+    display:flex;
+    justify-content:center;
+    background-color:rgba(0, 0, 0, 0.6);
+}
+
+.tablet .all_skills{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    color:white;
+    text-align:center;
+}
+
+.tablet .all_skills h3{
+    text-align:center;
+    padding:0.5em 0;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing: 5px;
+}
+
+.tablet .all_skills p{
+    line-height:35px;
+    font-weight:600;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+}
+
+/*End skills*/
