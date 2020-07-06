@@ -798,3 +798,70 @@ p{
 }
 
 /*End skills*/
+
+/*Internet Style*/
+.tablet .internet {
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    height: 490px;
+    background-color:white;
+}
+
+.tablet .internet_container{
+    padding:1em 1.5em;
+}
+
+.tablet .gallery_app_container {
+    height: 480px;
+}
+
+.tablet .internet::-webkit-scrollbar {
+    width: 5px;
+}
+
+.tablet .internet::-webkit-scrollbar-thumb {
+    background-color: #141414;
+}
+
+.tablet .page_link{
+    margin-bottom:1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid black;
+}
+
+.tablet .internet .page_link_container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.tablet .image_container{
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+}
+
+.tablet .internet img {
+    height:150px;
+}
+
+.tablet .internet .description {
+    padding-left: 2em;
+}
+
+.tablet .internet a{
+    color:#143479;
+    margin-top: 1em;
+    cursor:pointer;
+    letter-spacing:3px;
+    transition: 0.5s;
+    font-weight:600;
+}
+
+.tablet .internet a:hover{
+    color:#4c7da3;
+}
+
+/*End of internet style*/

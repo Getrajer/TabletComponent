@@ -182,12 +182,12 @@ namespace TabletComponent.Pages
 
 
         #region Variables and functions for toggleing apps within tablet
-        protected bool show_main_screen = false;
+        protected bool show_main_screen = true;
         protected bool show_chat_app = false;
         protected bool show_live_app = false;
         protected bool show_options_screen = false;
         protected bool show_internet_app = false;
-        protected bool show_gallery_app = true;
+        protected bool show_gallery_app = false;
         protected bool show_skills_app = false;
 
         public void CloseAllApps()
